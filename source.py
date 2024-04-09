@@ -175,8 +175,6 @@ class TTTGame(arcade.Window):
         
     def check_game_end(self):
 
-        print(self.tile_positions)
-
         current_player_tile = 'O'
         if self.x_turn:
             current_player_tile = 'X'
@@ -231,7 +229,6 @@ class TTTGame(arcade.Window):
             return
 
         place, distance = arcade.get_closest_sprite(self.held_tile, self.tile_placement_list)
-        print(str(self.tile_placement_list.index(place)))
         reset_position = True
 
         if arcade.check_for_collision(self.held_tile, place):
